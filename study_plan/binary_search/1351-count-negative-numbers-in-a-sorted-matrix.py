@@ -20,7 +20,7 @@ class Solution:
                     low = mid + 1
             negs += (len(row) - lower_bound)
 
-            return negs
+        return negs
 
 
 s = Solution()
