@@ -9,7 +9,12 @@ class Solution:
             mid = (l + r) // 2
 
             if target == nums[mid]:
-                return mid
+                return True
+            if nums[l] == nums[mid] and nums[mid] == nums[r]:
+                l = l + 1
+                r = r - 1
+                continue
+
             # left sorted part
             if nums[l] <= nums[mid]:
                 if nums[l] <= target and target <= nums[mid]:
@@ -23,9 +28,9 @@ class Solution:
                     l = mid + 1
                 else:
                     r = mid - 1
-        return -1
+        return False
 
 
 s = Solution()
 
-print(s.search([5, 1, 3], 5))
+print(s.search([2, 5, 6, 0, 0, 1, 2], 0))
